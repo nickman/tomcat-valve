@@ -33,6 +33,7 @@
 		  <groupId>org.apache.tomcat</groupId>
 		  <artifactId>catalina</artifactId>
 		  <version>${tomcat.version}</version>
+		  <scope>provided</scope>
 		</dependency>
 
 		<dependency>

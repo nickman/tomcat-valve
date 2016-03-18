@@ -30,6 +30,7 @@ import javax.servlet.ServletException;
 import org.apache.catalina.Lifecycle;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.LifecycleListener;
+import org.apache.catalina.connector.Connector;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
 import org.apache.catalina.valves.ValveBase;
@@ -171,6 +172,12 @@ public class SecureCookies extends ValveBase implements Lifecycle {
 	@Override
 	public void removeLifecycleListener(final LifecycleListener listener) {
 		if(listener!=null) listeners.remove(listener);		
+	}
+	
+	private static final Connector[] EMPTY_CONN_ARR = {};
+	
+	public Connector[] findConnectors() {
+		return EMPTY_CONN_ARR;
 	}
 
 
